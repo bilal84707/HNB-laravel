@@ -12,4 +12,9 @@ class Category extends Model
         'name',
         'category_id'
     ];
+
+    public function parentcat()
+    {
+        return $this->belongsto(Category::class,'category_id');
+    }
 }

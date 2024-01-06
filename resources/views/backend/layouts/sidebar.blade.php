@@ -95,7 +95,7 @@
               <li class="sidebar-item">
                 <a
                   class="sidebar-link waves-effect waves-dark"
-                  href="{{route('dashboard')}}"
+                  href="{{route('redirect')}}"
                   aria-expanded="false"
                 >
                   <i class="mdi mdi-gauge"></i>
@@ -108,23 +108,21 @@
                   class="sidebar-link has-arrow waves-effect waves-dark"
                   href="javascript:void(0)"
                   aria-expanded="false"
-                  ><i class="mdi mdi-content-copy"></i
-                  ><span class="hide-menu">Category Manager</span></a
+                  ><i class="fa-solid fa-layer-group"></i><span class="hide-menu">Category Manager</span></a
                 >
                 <ul aria-expanded="false" class="collapse first-level">
                   <li class="sidebar-item">
                     <a
                       href="{{route('addform')}}"
                       class="sidebar-link"
-                      ><i class="mdi mdi-format-align-left"></i
-                      ><span class="hide-menu">
+                      ><i class="fa-solid fa-circle-plus" style="color:blue;"></i><span class="hide-menu">
                         Add
                       </span></a
                     >
                   </li>
                   <li class="sidebar-item">
                     <a
-                      href="layout-inner-fixed-right-sidebar.html"
+                      href="{{route('category.list')}}"
                       class="sidebar-link"
                       ><i class="mdi mdi-format-align-right"></i
                       ><span class="hide-menu">
@@ -133,6 +131,33 @@
                     >
                   </li>
          
+                </ul>
+              </li>
+
+              
+             
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link has-arrow waves-effect waves-dark"
+                  href="javascript:void(0)"
+                  aria-expanded="false"
+                  ><i class="mdi mdi-widgets"></i
+                  ><span class="hide-menu">Product Manager</span></a
+                >
+                <ul aria-expanded="false" class="collapse first-level">
+                  <li class="sidebar-item">
+                    <a href="{{route('productform')}}" class="sidebar-link"
+                      ><i class="mdi mdi-box-shadow"></i
+                      ><span class="hide-menu"> Add</span></a
+                    >
+                  </li>
+                  <li class="sidebar-item">
+                    <a href="{{route('product.list')}}" class="sidebar-link"
+                      ><i class="mdi mdi-application"></i
+                      ><span class="hide-menu"> List</span></a
+                    >
+                  </li>
+                 
                 </ul>
               </li>
               <li class="nav-small-cap">
@@ -255,129 +280,7 @@
                   </li>
                 </ul>
               </li>
-              <li class="nav-small-cap">
-                <i class="mdi mdi-dots-horizontal"></i>
-                <span class="hide-menu">UI</span>
-              </li>
-              <li class="sidebar-item">
-                <a
-                  class="sidebar-link has-arrow waves-effect waves-dark"
-                  href="javascript:void(0)"
-                  aria-expanded="false"
-                  ><i class="mdi mdi-widgets"></i
-                  ><span class="hide-menu">Ui Elements </span></a
-                >
-                <ul aria-expanded="false" class="collapse first-level">
-                  <li class="sidebar-item">
-                    <a href="ui-accordian.html" class="sidebar-link"
-                      ><i class="mdi mdi-box-shadow"></i
-                      ><span class="hide-menu"> Accordian</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="ui-badge.html" class="sidebar-link"
-                      ><i class="mdi mdi-application"></i
-                      ><span class="hide-menu"> Badge</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="ui-buttons.html" class="sidebar-link"
-                      ><i class="mdi mdi-toggle-switch"></i
-                      ><span class="hide-menu"> Buttons</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="ui-modals.html" class="sidebar-link"
-                      ><i class="mdi mdi-tablet"></i
-                      ><span class="hide-menu"> Modals</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="ui-tab.html" class="sidebar-link"
-                      ><i class="mdi mdi-sort-variant"></i
-                      ><span class="hide-menu"> Tab</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="ui-tooltip-popover.html" class="sidebar-link"
-                      ><i class="mdi mdi-image-filter-vintage"></i
-                      ><span class="hide-menu"> Tooltip &amp; Popover</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="ui-notification.html" class="sidebar-link"
-                      ><i class="mdi mdi-message-bulleted"></i
-                      ><span class="hide-menu"> Notification</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="ui-progressbar.html" class="sidebar-link"
-                      ><i class="mdi mdi-poll"></i
-                      ><span class="hide-menu"> Progressbar</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="ui-typography.html" class="sidebar-link"
-                      ><i class="mdi mdi-format-line-spacing"></i
-                      ><span class="hide-menu"> Typography</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="ui-bootstrap.html" class="sidebar-link"
-                      ><i class="mdi mdi-bootstrap"></i
-                      ><span class="hide-menu"> Bootstrap Ui</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="ui-breadcrumb.html" class="sidebar-link"
-                      ><i class="mdi mdi-equal"></i
-                      ><span class="hide-menu"> Breadcrumb</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="ui-lists.html" class="sidebar-link"
-                      ><i class="mdi mdi-file-video"></i
-                      ><span class="hide-menu"> List Media</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="ui-grid.html" class="sidebar-link"
-                      ><i class="mdi mdi-view-module"></i
-                      ><span class="hide-menu"> Grid</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="ui-carousel.html" class="sidebar-link"
-                      ><i class="mdi mdi-view-carousel"></i
-                      ><span class="hide-menu"> Carousel</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="ui-offcanvas.html" class="sidebar-link"
-                      ><i class="mdi mdi-copy"></i
-                      ><span class="hide-menu"> Offcanvas</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="ui-scrollspy.html" class="sidebar-link"
-                      ><i class="mdi mdi-application"></i
-                      ><span class="hide-menu"> Scrollspy</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="ui-toasts.html" class="sidebar-link"
-                      ><i class="mdi mdi-credit-card-scan"></i
-                      ><span class="hide-menu"> Toasts</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="ui-spinner.html" class="sidebar-link"
-                      ><i class="mdi mdi-apple-safari"></i
-                      ><span class="hide-menu"> Spinner</span></a
-                    >
-                  </li>
-                </ul>
-              </li>
+            
               <li class="sidebar-item">
                 <a
                   class="sidebar-link has-arrow waves-effect waves-dark"

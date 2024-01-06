@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\HomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,21 +18,39 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.home');
-});
+// Route::get('/', function () {
+//     return view('frontend.home');
+// });
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/admin',[AdminController::class,'login'])->name('dashboard');
+    Route::get('/redirect',[AdminController::class,'redirect'])->name('redirect');
+    
     Route::get('/category/add',[CategoryController::class,'addform'])->name('addform');
     Route::post('/store',[CategoryController::class,'store'])->name('category.store');
+    Route::get('category/list',[CategoryController::class,'list'])->name('category.list');
+    Route::get('category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
+    Route::post('category/update/{id}',[CategoryController::class,'update'])->name('category.update');
+    Route::post('category/update/{id}',[CategoryController::class,'update'])->name('category.update');
+    Route::get('category/delete/{id}',[CategoryController::class,'delete'])->name('category.delete');
+// product routes
+    Route::get('/product/add',[ProductController::class,'addform'])->name('productform');
+    Route::post('/product/store',[ProductController::class,'store'])->name('productstore');
+    Route::get('/product/list',[ProductController::class,'index'])->name('product.list');
+    Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('product.delete');
+
+
 });
-Route::get('/logout',[AdminController::class,'logout'])->name('logging.out');
 Route::get('/shop',function(){
     return view('frontend.shop');
 })->name('shop');
+
+
+// Home routes
+Route::get('/',[HomeController::class,'home'])->name('home');
+Route::get('/logout',[AdminController::class,'logout'])->name('logging.out');
+
 

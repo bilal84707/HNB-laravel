@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use Auth;
 class AdminController extends Controller
 {
-    public function login()
+    public function __constructor(){
+        $this->middleware(['auth', 'verified']);
+    }
+    public function redirect()
     {
         $usertype= auth::user()->usertype;
        if($usertype=='1')
