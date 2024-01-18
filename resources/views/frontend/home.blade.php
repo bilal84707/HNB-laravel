@@ -34,7 +34,8 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+        @foreach($products as $product)
+        <div class="modal fade" id="productModal{{$product->id}}" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
@@ -65,8 +66,11 @@
                         <div class="col-md-7 col-sm-6">
                             <div class="product-single">
                                 <div class="ps-header">
-                                    <span class="badge offer">-50%</span>
-                                    <h3>Product fashion</h3>
+                                    @if($product->discount > 0)
+                                    <span class="badge offer">-{{$product->discount}}%</span>
+                                    @endif
+                                    <h2>{{$product->name}}</h2>
+                                    <h3>{{$product->title}}</h3>
                                     <div class="ratings-wrap">
                                         <div class="ratings">
                                             <span class="act fa fa-star"></span>
@@ -77,11 +81,11 @@
                                         </div>
                                         <em>(6 reviews)</em>
                                     </div>
-                                    <div class="ps-price"><span>$ 200.00</span> $ 99.00</div>
+                                    <div class="ps-price"><span>@if($product->discounted_price > 0)${{$product->price}}@endif</span> $ {{$product->discounted_price >0 && $product->discounted_price !=null ? $product->discounted_price : $product->price}}</div>
                                 </div>
 
                                 <div class="ps-stock">
-                                    Available: <a href="#">In Stock</a>
+                                    Available: {{$product->qty}} <a href="#">In Stock</a>
                                 </div>
                                 <div class="sep"></div>
                                 <div class="ps-color">
@@ -132,7 +136,7 @@
                 </div>
             </div>
         </div>
-
+        @endforeach
         <div id="backtotop"><i class="fa fa-chevron-up"></i></div>
         @endsection
 

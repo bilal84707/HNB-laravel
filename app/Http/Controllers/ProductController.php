@@ -102,6 +102,9 @@ return redirect()->back();
     public function update(request $request)
     {
         $id=$request->id;
+        $price = $request->input('price');
+        $discount = $request->input('discount');
+        $discountedPrice = $discount > 0 ? $price - ($price * ($discount / 100)) : 0;
         $request->validate([
             'pname'=>'required',
             'title'=>'required',
@@ -122,6 +125,7 @@ return redirect()->back();
         'qty'=>$request->qty,
         'discount'=>$request->discount,
         'category_id'=>$request->category_id,
+        'discounted_price'=>$discountedPrice
         );
 
         // Upload and save image1

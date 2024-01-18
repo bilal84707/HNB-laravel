@@ -128,6 +128,7 @@
                               <input
                               name="price"
                                 type="text"
+                                id="price"
                                 class="form-control"
                                 placeholder="price"
                                 aria-label="price"
@@ -146,7 +147,7 @@
                         <!--/span-->
                         <div class="col-md-6">
                           <div class="mb-3">
-                            <label>Discount</label>
+                            <label>Discount (%)</label>
                             <div class="input-group mb-3">
                               <span class="input-group-text" id="basic-addon2"
                                 ><i class="ti-cut"></i
@@ -158,8 +159,9 @@
                                 class="form-control"
                                 placeholder="Discount"
                                 aria-label="Discount"
+                                id="discount"
                                 aria-describedby="basic-addon2"
-                                value="{{ $product->discount !=null ? $product->discount : '' }}"
+                                value="{{ $product->discount !=null ? $product->discount : 0 }}"
                               />
                               @error('discount')
                             <div class="text-danger">
@@ -169,6 +171,36 @@
                             </div>
                           </div>
                         </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label>Discounted Price</label>
+                            <div class="input-group mb-3">
+                              <span class="input-group-text" id="basic-addon3"
+                                ><i class="ti-money"></i
+                              ></span>
+                              <input
+                              name="discounted_price"
+                                type="text"
+                                id="discount_price"
+                                class="form-control"
+                                placeholder="price"
+                                aria-label="price"
+                                aria-describedby="basic-addon3"
+                                value="{{ $product->discounted_price !=null ? $product->discounted_price : 0 }}"
+                                disabled
+                              />
+                           
+                            </div>
+                            @error('discounted_price')
+                            <div class="text-danger">
+                            {{'price field is empty'}}
+                            </div>
+                             @enderror
+                          </div>
+                        </div>
+                        <!--/span-->
                         <div class="col-md-2">
                           <div class="mb-3">
                             <label class="control-label">Quantity</label>
@@ -320,5 +352,43 @@
             <!-- Column -->
           </div>
         </div>
+<!-- Add these scripts at the end of your HTML body or within a script tag in the head -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Function to update discounted price
+        function updateDiscountedPrice() {
+            var priceInput = document.getElementById('price');
+            var discountInput = document.getElementById('discount');
+            var discountedPriceInput = document.getElementById('discount_price');
+
+            var price = parseFloat(priceInput.value) || 0;
+            var discount = parseFloat(discountInput.value) || 0;
+
+            // Validate discount (ensure it's not greater than 100%)
+            if (discount < 0 || discount > 100) {
+                // Display an error message or handle it appropriately
+                discountInput.setCustomValidity('Discount must be between 0% and 100%');
+                discountedPriceInput.value = ''; // Clear the discounted price field
+            } else {
+                discountInput.setCustomValidity('');
+                var discountedPrice = discount > 0 ? price - (price * (discount / 100)).toFixed(2) : '';
+                discountedPriceInput.value = discountedPrice;
+            }
+        }
+
+        // Add event listeners to price and discount fields
+        var priceInput = document.getElementById('price');
+        var discountInput = document.getElementById('discount');
+
+        priceInput.addEventListener('input', updateDiscountedPrice);
+        discountInput.addEventListener('input', updateDiscountedPrice);
+
+        // Initial calculation on page load
+        updateDiscountedPrice();
+    });
+</script>
+
+
 
 @endsection

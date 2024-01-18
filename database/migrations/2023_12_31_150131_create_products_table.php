@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('image1');
             $table->string('image2');
             $table->string('image3');
+            $table->float('discounted_price')->default(0)->nullable();
             $table->bigInteger('category_id')->unsigned()->nullable();
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
