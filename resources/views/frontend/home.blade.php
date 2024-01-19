@@ -42,25 +42,15 @@
                     <div class="row">
                         <div class="col-md-5 col-sm-6">
                             <div class="owl-carousel sync1">
-                                <div class="item"> <img src="{{asset('frontend/images/products/single/1.jpg')}}" alt=""> </div>
-                                <div class="item"> <img src="{{asset('frontend/images/products/single/2.jpg')}}" alt=""> </div>
-                                <div class="item"> <img src="{{asset('frontend/images/products/single/3.jpg')}}" alt=""> </div>
-                                <div class="item"> <img src="{{asset('frontend/images/products/single/4.jpg')}}" alt=""> </div>
-                                <div class="item"> <img src="{{asset('frontend/images/products/single/1.jpg')}}" alt=""> </div>
-                                <div class="item"> <img src="{{asset('frontend/images/products/single/2.jpg')}}" alt=""> </div>
-                                <div class="item"> <img src="{{asset('frontend/images/products/single/3.jpg')}}" alt=""> </div>
-                                <div class="item"> <img src="{{asset('frontend/images/products/single/4.jpg')}}" alt=""> </div>
+                                <div class="item"> <img src="{{asset('/uploads/products/'.$product->image1)}}" alt=""> </div>
+                                <div class="item"> <img src="{{asset('/uploads/products/'.$product->image2)}}" alt=""> </div>
+                                <div class="item"> <img src="{{asset('/uploads/products/'.$product->image3)}}" alt=""> </div>
                             </div>
 
                             <div class="owl-carousel sync2">
-                                <div class="item"> <img src="{{asset('frontend/images/products/single/1.jpg')}}" alt=""> </div>
-                                <div class="item"> <img src="{{asset('frontend/images/products/single/2.jpg')}}" alt=""> </div>
-                                <div class="item"> <img src="{{asset('frontend/images/products/single/3.jpg')}}" alt=""> </div>
-                                <div class="item"> <img src="{{asset('frontend/images/products/single/4.jpg')}}" alt=""> </div>
-                                <div class="item"> <img src="{{asset('frontend/images/products/single/1.jpg')}}" alt=""> </div>
-                                <div class="item"> <img src="{{asset('frontend/images/products/single/2.jpg')}}" alt=""> </div>
-                                <div class="item"> <img src="{{asset('frontend/images/products/single/3.jpg')}}" alt=""> </div>
-                                <div class="item"> <img src="{{asset('frontend/images/products/single/4.jpg')}}" alt=""> </div>
+                                <div class="item"> <img src="{{asset('/uploads/products/'.$product->image1)}}" alt=""> </div>
+                                <div class="item"> <img src="{{asset('/uploads/products/'.$product->image2)}}" alt=""> </div>
+                                <div class="item"> <img src="{{asset('/uploads/products/'.$product->image3)}}" alt=""> </div> 
                             </div>
                         </div>
                         <div class="col-md-7 col-sm-6">

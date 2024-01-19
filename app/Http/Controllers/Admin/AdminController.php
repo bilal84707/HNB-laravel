@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller; //must include base conrollers
 use Illuminate\Http\Request;
 use Auth;
 class AdminController extends Controller
