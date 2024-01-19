@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\HomeController;
 
 
@@ -41,6 +41,12 @@ Route::middleware([
     Route::post('/product/store',[ProductController::class,'store'])->name('productstore');
     Route::get('/product/list',[ProductController::class,'index'])->name('product.list');
     Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('product.delete');
+    Route::get('/product/details/{id}',[ProductController::class,'details'])->name('product.details');
+    Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
+    Route::post('/product/edit/{id}',[ProductController::class,'update'])->name('product.update');
+
+
+
 
 
 });

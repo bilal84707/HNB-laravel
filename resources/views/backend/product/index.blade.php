@@ -84,9 +84,11 @@
                 </div>
             </td>
 
-                <td><a href=""><i class="fas fa-edit "></i></a> 
-                <a href="{{route('product.delete',$product->id)}}"><i class="fas fa-trash-alt" style="color:red"></i></a>
-            </td>
+                <td>
+                    <a href="{{route('product.edit',$product->id)}}"><i class="fas fa-edit "></i></a> 
+                    <a href="{{route('product.delete',$product->id)}}"><i class="fas fa-trash-alt" style="color:red"></i></a>
+                    <a href="{{route('product.details',$product->id)}}"><i class="fa-solid fa-eye" style="color:#103cbffa"></i></a>
+                </td>
                 <!-- Add more columns as needed -->
             </tr>
         @endforeach
