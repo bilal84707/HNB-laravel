@@ -18,7 +18,7 @@ return new class extends Migration
             $table->enum('status', ['1', '0'])->default('1');
             $table->text('description')->nullable();
             $table->float('price');
-            $table->string('qty');
+            $table->biginteger('qty');
             $table->float('discount')->nullable();
             $table->string('image1');
             $table->string('image2');

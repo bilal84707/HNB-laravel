@@ -71,7 +71,10 @@
                                         </div>
                                         <em>(6 reviews)</em>
                                     </div>
-                                    <div class="ps-price"><span>@if($product->discounted_price > 0)${{$product->price}}@endif</span> $ {{$product->discounted_price >0 && $product->discounted_price !=null ? $product->discounted_price : $product->price}}</div>
+                                    <div class="ps-price"> <span>
+                                    @if($product->discount > 0)${{$product->price}}@endif
+                                    </span> 
+                                    ${{ calculatediscount($product->price, $product->discount > 0 && $product->discount != null ? $product->discount : 0) }}</div>
                                 </div>
 
                                 <div class="ps-stock">

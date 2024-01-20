@@ -11,30 +11,30 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('product_variations', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->string('title');
             $table->enum('status', ['1', '0'])->default('1');
             $table->text('description')->nullable();
             $table->float('price');
             $table->string('qty');
             $table->float('discount')->nullable();
+            $table->bigInteger('product_id')->unsigned();
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->bigInteger('variation_type_id')->unsigned();
+            $table->foreign('variation_type_id')->references('id')->on('variation_types')->onDelete('cascade');
             $table->string('image1');
             $table->string('image2');
             $table->string('image3');
-            $table->bigInteger('category_id')->unsigned()->nullable();
-            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
-    
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('product_variations');
     }
 };

@@ -75,7 +75,7 @@
                 @else
                 <td class="text-danger">Inactive</td>
                 @endif
-                <td>{{($product->Discount) !=null ? $product->Discount :'0'}}</td>
+                <td>{{($product->discount) !=null ? $product->discount :'0'}}</td>
                 <td>{{$product->qty}}</td>
                 <td>{{$product->category->name}}</td>
                 <td>
