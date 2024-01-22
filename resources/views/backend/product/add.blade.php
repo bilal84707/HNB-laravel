@@ -123,7 +123,8 @@
                               ></span>
                               <input
                               name="price"
-                                type="text"
+                                id="price"
+                                type="number"
                                 class="form-control"
                                 placeholder="price"
                                 aria-label="price"
@@ -141,7 +142,7 @@
                         <!--/span-->
                         <div class="col-md-6">
                           <div class="mb-3">
-                            <label>Discount</label>
+                            <label>Discount (%)</label>
                             <div class="input-group mb-3">
                               <span class="input-group-text" id="basic-addon2"
                                 ><i class="ti-cut"></i
@@ -149,7 +150,8 @@
 
                               <input
                               name="discount"
-                                type="text"
+                                id="discount"
+                                type="number"
                                 class="form-control"
                                 placeholder="Discount"
                                 aria-label="Discount"
@@ -161,6 +163,34 @@
                             </div>
                              @enderror
                             </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label>Discounted Price</label>
+                            <div class="input-group mb-3">
+                              <span class="input-group-text" id="basic-addon3"
+                                ><i class="ti-money"></i
+                              ></span>
+                              <input
+                              name="discounted_price"
+                                type="text"
+                                id="discount_price"
+                                class="form-control"
+                                placeholder="After Discount"
+                                aria-label="price"
+                                aria-describedby="basic-addon3"
+                                value=""
+                                disabled
+                              />
+                           
+                            </div>
+                            @error('discounted_price')
+                            <div class="text-danger">
+                            {{'price field is empty'}}
+                            </div>
+                             @enderror
                           </div>
                         </div>
                         <div class="col-md-2">
@@ -180,6 +210,8 @@
                              @enderror
                           </div>
                         </div>
+                        </div>
+                        
                         <!--/span-->
                       </div>
                       <h5 class="card-title mt-5">Product Description</h5>
@@ -366,5 +398,41 @@ Lorem Ipsum available, but the majority have suffered alteration in some form, b
         });
     });
 </script> -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Function to update discounted price
+        function updateDiscountedPrice() {
+            var priceInput = document.getElementById('price');
+            var discountInput = document.getElementById('discount');
+            var discountedPriceInput = document.getElementById('discount_price');
+
+            var price = parseFloat(priceInput.value) || 0;
+            var discount = parseFloat(discountInput.value) || 0;
+
+            // Validate discount (ensure it's not greater than 100%)
+            if (discount < 0 || discount > 100) {
+                // Display an error message or handle it appropriately
+                discountInput.setCustomValidity('Discount must be between 0% and 100%');
+                discountedPriceInput.value = ''; // Clear the discounted price field
+            } else {
+                discountInput.setCustomValidity('');
+                var discountedPrice = discount > 0 ? price - (price * (discount / 100)).toFixed(2) : '';
+                discountedPriceInput.value = discountedPrice;
+            }
+        }
+
+        // Add event listeners to price and discount fields
+        var priceInput = document.getElementById('price');
+        var discountInput = document.getElementById('discount');
+
+        priceInput.addEventListener('input', updateDiscountedPrice);
+        discountInput.addEventListener('input', updateDiscountedPrice);
+
+        // Initial calculation on page load
+        updateDiscountedPrice();
+    });
+</script>
+
 
 @endsection

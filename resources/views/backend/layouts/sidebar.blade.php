@@ -133,9 +133,6 @@
          
                 </ul>
               </li>
-
-              
-             
               <li class="sidebar-item">
                 <a
                   class="sidebar-link has-arrow waves-effect waves-dark"
@@ -158,6 +155,29 @@
                     >
                   </li>
                  
+                </ul>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link has-arrow waves-effect waves-dark"
+                  href="javascript:void(0)"
+                  aria-expanded="false"
+                  ><i class="mdi mdi-credit-card-multiple"></i
+                  ><span class="hide-menu">Variation Manager</span></a
+                >
+                <ul aria-expanded="false" class="collapse first-level">
+                  <li class="sidebar-item">
+                    <a href="{{route('type.add')}}" class="sidebar-link"
+                      ><i class="mdi mdi-layers"></i
+                      ><span class="hide-menu">Types</span></a
+                    >
+                  </li>
+                  <li class="sidebar-item">
+                    <a href="ui-card-customs.html" class="sidebar-link"
+                      ><i class="mdi mdi-credit-card-scan"></i
+                      ><span class="hide-menu">Variations</span></a
+                    >
+                  </li>
                 </ul>
               </li>
               <li class="nav-small-cap">
@@ -281,41 +301,7 @@
                 </ul>
               </li>
             
-              <li class="sidebar-item">
-                <a
-                  class="sidebar-link has-arrow waves-effect waves-dark"
-                  href="javascript:void(0)"
-                  aria-expanded="false"
-                  ><i class="mdi mdi-credit-card-multiple"></i
-                  ><span class="hide-menu">Cards</span></a
-                >
-                <ul aria-expanded="false" class="collapse first-level">
-                  <li class="sidebar-item">
-                    <a href="ui-cards.html" class="sidebar-link"
-                      ><i class="mdi mdi-layers"></i
-                      ><span class="hide-menu"> Basic Cards</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="ui-card-customs.html" class="sidebar-link"
-                      ><i class="mdi mdi-credit-card-scan"></i
-                      ><span class="hide-menu">Custom Cards</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="ui-card-weather.html" class="sidebar-link"
-                      ><i class="mdi mdi-weather-fog"></i
-                      ><span class="hide-menu">Weather Cards</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="ui-card-draggable.html" class="sidebar-link"
-                      ><i class="mdi mdi-bandcamp"></i
-                      ><span class="hide-menu">Draggable Cards</span></a
-                    >
-                  </li>
-                </ul>
-              </li>
+              
               <li class="sidebar-item">
                 <a
                   class="sidebar-link has-arrow waves-effect waves-dark"

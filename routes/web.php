@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\VariationTypeController;
+
 use App\Http\Controllers\HomeController;
 
 
@@ -44,6 +46,11 @@ Route::middleware([
     Route::get('/product/details/{id}',[ProductController::class,'details'])->name('product.details');
     Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
     Route::post('/product/edit/{id}',[ProductController::class,'update'])->name('product.update');
+// variation routes
+    Route::get('/type',[VariationTypeController::class,'add'])->name('type.add');
+    Route::post('/type',[VariationTypeController::class,'store'])->name('type.store');
+    Route::post('/type/update',[VariationTypeController::class,'update'])->name('type.update');
+
 
 
 
