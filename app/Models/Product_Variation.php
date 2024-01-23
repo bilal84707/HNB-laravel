@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class product_variations extends Model
+class product_variation extends Model
 {
     use HasFactory;
 
@@ -16,6 +16,8 @@ class product_variations extends Model
         'description',
         'price',
         'qty',
+        'name',
+        'color_code',
         'discount',
         'image1',
         'image2',

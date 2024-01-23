@@ -173,7 +173,7 @@
                     >
                   </li>
                   <li class="sidebar-item">
-                    <a href="ui-card-customs.html" class="sidebar-link"
+                    <a href="{{route('variation.add')}}" class="sidebar-link"
                       ><i class="mdi mdi-credit-card-scan"></i
                       ><span class="hide-menu">Variations</span></a
                     >

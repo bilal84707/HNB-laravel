@@ -14,6 +14,6 @@ class variation_type extends Model
 
     public function variations()
     {
-        return $this->hasOne(Variation_type::class);
+        return $this->hasMany(Variation_type::class);
     }
 }
